@@ -2,7 +2,8 @@
   [ngClass]="{ hidden: !menuService.showSideBar, 'max-h-screen': submenu.expanded }">
   <ul
     class="border-border text-muted-foreground flex flex-col border-dashed ltr:border-l ltr:pl-2 rtl:border-r rtl:pr-2">
-    <li *ngFor="let sub of submenu.children">
+    @for(sub of submenu.children; track sub) {
+    <li>
       <div class="text-muted-foreground hover:text-primary relative flex" (click)="toggleMenu(sub)">
         <!-- Condition -->
         <ng-container [ngTemplateOutlet]="sub.children ? childMenu : parentMenu"
@@ -42,5 +43,6 @@
       <app-sidebar-submenu [submenu]="sub"></app-sidebar-submenu>
       }
     </li>
+    }
   </ul>
 </div>
