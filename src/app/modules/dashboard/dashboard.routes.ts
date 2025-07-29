@@ -14,6 +14,10 @@ export const DASHBOARD_ROUTES: Routes = [
         path: 'turnos/agenda',
         loadComponent: () => import('./pages/shift-schedule/shift-schedule').then(m => m.ShiftSchedule),
       },
+      {
+        path: 'horarios/configuracion',
+        loadComponent: () => import('./pages/schedule-configuration/schedule-configuration').then(m => m.ScheduleConfiguration),
+      },
     ]
   }
 ];

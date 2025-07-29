@@ -1,0 +1,19 @@
+<div class="w-48 flex items-center gap-2">
+  <select [ngModel]="from" (ngModelChange)="onFromChange($event)" class="border rounded px-2 py-1">
+    @for (h of hoursFromAvailable; track h) {
+    <option [value]="h">
+      {{ h }}
+    </option>
+    }
+  </select>
+
+  <span class="text-sm text-muted-foreground">a</span>
+
+  <select [ngModel]="to" (ngModelChange)="onToChange($event)" class="border rounded px-2 py-1">
+    @for (h of hoursToAvailable; track h) {
+    <option [value]="h">
+      {{ h }}
+    </option>
+    }
+  </select>
+</div>

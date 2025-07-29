@@ -1,0 +1,10 @@
+<div class="bg-background p-4 rounded-lg shadow-sm">
+  <h2 class="text-lg font-semibold mb-4 text-foreground">Horarios de Trabajo</h2>
+  <p class="text-sm text-muted-foreground  mb-4">Configura tus días y horarios de atención</p>
+
+  <div class="space-y-4 flex flex-col">
+    @for (day of days; track day) {
+    <app-day-item [name]="day"></app-day-item>
+    }
+  </div>
+</div>

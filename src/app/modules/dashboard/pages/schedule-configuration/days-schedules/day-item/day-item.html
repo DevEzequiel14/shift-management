@@ -1,0 +1,35 @@
+<div class="rounded p-3 space-y-2">
+  <div class="flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <input type="checkbox" class="toggle" [(ngModel)]="active" />
+      <span class="font-medium text-foreground">{{ name }}</span>
+      @if (!active) {
+      <span class="text-sm text-muted-foreground  ml-2">Cerrado</span>
+      }
+    </div>
+    @if (active) {
+    <button (click)="addSchedule()" class="text-sm text-primary hover:underline">
+      + Agregar horario
+    </button>
+    }
+    @if (errorMsg) {
+    <div class="text-xs text-red-500 mt-1">{{ errorMsg }}</div>
+    }
+  </div>
+
+  @if (active) {
+  <div class="flex flex-col space-y-2">
+    @for (h of schedules; track h; let i = $index) {
+    <div class="flex items-center gap-2">
+      <app-time-item [(from)]="h.from" [(to)]="h.to" [index]="i" [schedules]="getSchedulesWithout(i)"></app-time-item>
+      @if (schedules.length > 1) {
+      <button (click)="deleteSchedules(i)" class="text-red-500 hover:text-red-700" aria-label="Eliminar horario"
+        title="Eliminar horario">
+        <svg-icon src="assets/icons/heroicons/solid/trash.svg" [svgClass]="'h-5 w-5'"></svg-icon>
+      </button>
+      }
+    </div>
+    }
+  </div>
+  }
+</div>
