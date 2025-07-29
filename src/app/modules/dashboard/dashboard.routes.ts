@@ -10,6 +10,10 @@ export const DASHBOARD_ROUTES: Routes = [
         redirectTo: 'turnos/agenda',
         pathMatch: 'full',
       },
+      {
+        path: 'turnos/agenda',
+        loadComponent: () => import('./pages/shift-schedule/shift-schedule').then(m => m.ShiftSchedule),
+      },
     ]
   }
 ];
