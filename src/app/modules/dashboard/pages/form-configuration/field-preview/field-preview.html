@@ -1,0 +1,35 @@
+<form class="flex flex-col gap-4 text-sm">
+  <h3 class="font-semibold text-foreground">Solicitar Turno</h3>
+  @for (campo of campos; track campo) {
+  <ng-container>
+    @if (campo.activo) {
+    <div class="flex flex-col gap-1">
+
+      <div class="relative">
+        <ng-container [ngSwitch]="campo.tipo">
+          <input *ngSwitchCase="'texto'" class="peer block" type="text" [placeholder]="campo.placeholder" />
+          <input *ngSwitchCase="'email'" class="peer block" type="email" [placeholder]="campo.placeholder" />
+          <input *ngSwitchCase="'tel'" class="peer block" type="tel" [placeholder]="campo.placeholder" />
+          <input *ngSwitchCase="'fecha'" class="peer block" type="date" />
+          <select *ngSwitchCase="'select'" class="peer block">
+            <option disabled selected>Seleccione una opción</option>
+            @for (opt of campo.opciones; track opt) {
+            <option>{{ opt }}</option>
+            }
+          </select>
+        </ng-container>
+        <label class="bg-background text-muted-foreground peer-focus:text-primary
+                 absolute top-2 z-10 origin-[0] -translate-y-4 scale-95 transform
+                 px-2 text-sm ltr:left-1 rtl:right-1">
+          {{ campo.etiqueta }}
+          @if (campo.requerido) {
+          <span class="text-red-500">*</span>
+          }
+        </label>
+      </div>
+    </div>
+    }
+  </ng-container>
+  }
+  <app-button full="" impact="bold" tone="danger" shape="rounded" size="medium">Solicitar Turno</app-button>
+</form>

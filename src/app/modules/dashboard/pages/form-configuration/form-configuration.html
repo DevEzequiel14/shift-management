@@ -1,0 +1,28 @@
+<div class="p-6 space-y-6">
+  <h1 class="text-2xl font-bold text-foreground">Configuración de Campos del Formulario</h1>
+  <p class="text-sm text-muted-foreground">Personaliza los campos que tus clientes completarán al solicitar un turno</p>
+  <div class="bg-background p-6 flex flex-col lg:flex-row gap-6">
+    <div class="flex-1 p-4 rounded-lg shadow">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-foreground text-xl font-semibold">Campos del Formulario</h2>
+      </div>
+
+      <div class="flex flex-col space-y-4">
+        @for (campo of campos; track campo; let i = $index ) {
+        <app-item-field [campo]="campo" (eliminar)="campos.splice(i, 1)">
+        </app-item-field>
+        }
+      </div>
+
+      <hr class="my-4">
+
+      <app-add-field></app-add-field>
+    </div>
+
+    <!-- 🟨 Sección: Vista Previa -->
+    <div class="w-full lg:w-96 p-4 rounded-lg shadow">
+      <h2 class="text-lg font-medium mb-4 text-foreground">Vista Previa del Formulario</h2>
+      <app-field-preview [campos]="campos"></app-field-preview>
+    </div>
+  </div>
+</div>

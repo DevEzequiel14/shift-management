@@ -18,6 +18,10 @@ export const DASHBOARD_ROUTES: Routes = [
         path: 'horarios/configuracion',
         loadComponent: () => import('./pages/schedule-configuration/schedule-configuration').then(m => m.ScheduleConfiguration),
       },
+      {
+        path: 'formulario/configuracion',
+        loadComponent: () => import('./pages/form-configuration/form-configuration').then(m => m.FormConfiguration),
+      },
     ]
   }
 ];

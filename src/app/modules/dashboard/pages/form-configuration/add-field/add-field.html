@@ -1,0 +1,43 @@
+<div class="mt-6 pt-4">
+  <h3 class="text-sm font-semibold mb-2 text-foreground">Agregar Nuevo Campo</h3>
+  <form class="grid grid-cols-2 gap-3">
+
+    <div class="relative">
+      <input type="text" class="peer block" placeholder=" " />
+      <label
+        class="bg-background text-muted-foreground peer-focus:text-primary absolute top-2 z-10 origin-[0] -translate-y-4 scale-95 transform px-2 text-sm duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 ltr:left-1 rtl:right-1">
+        Nombre del campo
+      </label>
+    </div>
+
+    <div class="relative">
+      <input type="text" class="peer block" placeholder=" " />
+      <label
+        class="bg-background text-muted-foreground peer-focus:text-primary absolute top-2 z-10 origin-[0] -translate-y-4 scale-95 transform px-2 text-sm duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 ltr:left-1 rtl:right-1">
+        Etiqueta visible
+      </label>
+    </div>
+
+    <select class="border p-2 rounded text-sm col-span-2 bg-background text-muted-foreground">
+      <option class="text-muted-foreground">Texto</option>
+      <option class="text-muted-foreground">Email</option>
+      <option class="text-muted-foreground">Teléfono</option>
+      <option class="text-muted-foreground">Fecha</option>
+      <option class="text-muted-foreground">Select</option>
+    </select>
+
+    <div class="relative w-full">
+      <input type="text" class="peer block" placeholder=" " />
+      <label
+        class="bg-background text-muted-foreground peer-focus:text-primary absolute top-2 z-10 origin-[0] -translate-y-4 scale-95 transform px-2 text-sm duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 ltr:left-1 rtl:right-1">
+        Texto de ayuda
+      </label>
+    </div>
+
+    <label class="flex items-center gap-2 col-span-2 text-foreground">
+      <input type="checkbox" /> Campo requerido
+    </label>
+    <app-button full="" impact="bold" tone="primary" shape="rounded" size="medium">Agregar Campo</app-button>
+    <app-button full="" impact="bold" tone="danger" shape="rounded" size="medium">Cancelar</app-button>
+  </form>
+</div>
